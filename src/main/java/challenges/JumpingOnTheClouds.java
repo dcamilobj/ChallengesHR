@@ -23,7 +23,7 @@ public class JumpingOnTheClouds {
 
         OptionalInt result = Arrays.stream(c).filter(x -> x != CUMULUS_CLOUD && x != THUNDERCLOUD).findAny();
         if (result.isPresent()) {
-            LOGGER.warning("Only must have thunderclouds or cumeles clouds");
+            LOGGER.warning("Only must have thunderclouds or cumulus clouds");
             return 0;
         }
         int numberOfJumps = 0;
