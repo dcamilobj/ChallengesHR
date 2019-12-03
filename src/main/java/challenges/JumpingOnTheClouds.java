@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.OptionalInt;
 import java.util.logging.Logger;
 
-public class JumpingOnTheClouds {
+class JumpingOnTheClouds {
 
     private static final Logger LOGGER = Logger.getLogger(JumpingOnTheClouds.class.getName());
     private static final int THUNDERCLOUD = 1;
