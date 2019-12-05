@@ -2,6 +2,7 @@ package challenges;
 
 import java.util.logging.Logger;
 
+// Third challenge
 class RepeatedString {
 
     private static final Logger LOGGER = Logger.getLogger(RepeatedString.class.getName());

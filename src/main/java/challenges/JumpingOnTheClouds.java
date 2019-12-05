@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.OptionalInt;
 import java.util.logging.Logger;
 
+// Second challenge
 class JumpingOnTheClouds {
 
     private static final Logger LOGGER = Logger.getLogger(JumpingOnTheClouds.class.getName());

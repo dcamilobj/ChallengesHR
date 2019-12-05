@@ -2,6 +2,7 @@ package challenges;
 
 import org.apache.log4j.Logger;
 
+// First challenge
 class CountingValleys {
 
     private static final Logger LOGGER = Logger.getLogger(CountingValleys.class.getName());
