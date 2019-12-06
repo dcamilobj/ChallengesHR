@@ -5,7 +5,7 @@ import java.util.OptionalInt;
 import java.util.logging.Logger;
 
 // Fifth challenge
-public class LeftRotation {
+class LeftRotation {
 
     private static final Logger LOGGER = Logger.getLogger(LeftRotation.class.getName());
 
