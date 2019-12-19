@@ -33,5 +33,4 @@ class RepeatedString {
         total+=numberOfAInSubstring;
         return total;
     }
-
 }
