@@ -14,7 +14,6 @@ public class NewYearChaos {
         OptionalInt result = Arrays.stream(q).filter(x -> x > MAXIMUM_VALUE).findAny();
         if (result.isPresent()) {
             return "All line elements must be between one and one hundred thousand";
-
         } else {
             Arrays.stream(q).anyMatch(i -> i > (i +3));
 
@@ -29,10 +28,14 @@ public class NewYearChaos {
 
     private static int calculateBribes(int[] arr) {
         int necessaryBribes = 0;
-        for (int i = arr.length-1; i >0 ; i--) {
-            if(arr[i] < arr[i-1])
-                necessaryBribes+= arr[i] - arr[i-1];
+        int j = 1;
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (arr[i] < arr[i - j]) {
+                    necessaryBribes++;
+                }
             }
-        return Math.abs(necessaryBribes);
+        }
+        return necessaryBribes;
     }
 }
