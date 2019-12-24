@@ -2,7 +2,8 @@ package challenges;
 
 import java.util.Arrays;
 import java.util.OptionalInt;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 // Sixth challenge
 public class NewYearChaos {
@@ -15,27 +16,15 @@ public class NewYearChaos {
         if (result.isPresent()) {
             return "All line elements must be between one and one hundred thousand";
         } else {
-            Arrays.stream(q).anyMatch(i -> i > (i +3));
-
-            for (int i = 0; i < q.length; i++) {
-                if (q[i] > i + 3) {
-                    return "Too chaotic";
-                }
+            boolean isTooChaotic = IntStream.range(0, q.length).anyMatch(i -> q[i] > i +3);
+            if(isTooChaotic){
+                return "Too chaotic";
             }
             return Integer.toString(calculateBribes(q));
         }
     }
 
     private static int calculateBribes(int[] arr) {
-        int necessaryBribes = 0;
-        int j = 1;
-        for (int i = 1; i < arr.length; i++) {
-            for (int j = 1; j <= i; j++) {
-                if (arr[i] < arr[i - j]) {
-                    necessaryBribes++;
-                }
-            }
-        }
-        return necessaryBribes;
+        return IntStream.range(1, arr.length).map(i -> (int) IntStream.rangeClosed(1,i).filter(j -> arr[i] < arr[i-j]).count()).sum();
     }
 }

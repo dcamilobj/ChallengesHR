@@ -29,14 +29,14 @@ public class NewYearChaosTest {
     }
 
     @Test
-    public void shouldReturnOne(){
+    public void shouldReturnTwo(){
         int [] testArray = {1,4,2,3,5};
         NewYearChaos newYearChaos = new NewYearChaos();
         assertEquals("2", newYearChaos.minimumBribes(testArray));
     }
 
     @Test
-    public void shouldReturnTwo(){
+    public void shouldReturnOne(){
         int [] testArray = {1,3,2,4,5};
         NewYearChaos newYearChaos = new NewYearChaos();
         assertEquals("1", newYearChaos.minimumBribes(testArray));

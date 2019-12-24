@@ -14,9 +14,13 @@ public class Main {
         Stream<String>  randomStringNumbers = Stream.generate(() -> { return new Random().nextInt(10000);}).limit(2).map(i -> String.format("%04d",i));
         Stream<String>  repeatedString = Stream.generate(() -> {return "abc";}).limit(5);
 
+        System.out.println("Print iterate:" );
         Stream.iterate(2, (Integer n) -> ++n)
                 .limit(5)
                  .forEach(System.out::println);
+
+        System.out.println("Print iterate 2:" );
+        Stream.iterate(0, (Integer n) -> n = n+2).limit(100).forEach(System.out::println);
 
         //randomStringNumbers.forEach(System.out::println);
 
@@ -45,6 +49,29 @@ public class Main {
         Optional<Integer> number = listNumbers.stream().reduce((i,j) -> i+j);
 
         System.out.println(number.get());
+
+        System.out.println("Duplicates are:");
+        List<Integer> numbers = Arrays.asList(1,2,3,2,4,3,4,5);
+        numbers.stream().filter(i -> Collections.frequency(numbers, i) >1)
+                .collect(Collectors.toSet()).forEach(System.out::println);
+
+
+        // creating a list of Strings
+        List<String> words = Arrays.asList("GFG", "Geeks", "for",
+                "GeeksQuiz", "GeeksforGeeks");
+
+        // The lambda expression passed to
+        // reduce() method takes two Strings
+        // and returns the longer String.
+        // The result of the reduce() method is
+        // an Optional because the list on which
+        // reduce() is called may be empty.
+        Optional<String> longestString = words.stream()
+                .reduce((word1, word2)
+                        -> word1.length() > word2.length()
+                        ? word1 : word2);
+        // Displaying the longest String
+        longestString.ifPresent(System.out::println);
 
         int[] simpleArray = {1,2,3,4,5,6,7};
 
