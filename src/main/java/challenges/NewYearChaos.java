@@ -2,7 +2,6 @@ package challenges;
 
 import java.util.Arrays;
 import java.util.OptionalInt;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 // Sixth challenge
