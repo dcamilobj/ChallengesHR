@@ -55,4 +55,11 @@ public class NewYearChaosTest {
         NewYearChaos newYearChaos = new NewYearChaos();
         assertEquals("966", newYearChaos.minimumBribes(testArray));
     }
+
+    @Test
+    public void shouldReturnZero(){
+        int [] testArray = {1,2,3,4,5,6,7};
+        NewYearChaos newYearChaos = new NewYearChaos();
+        assertEquals("0", newYearChaos.minimumBribes(testArray));
+    }
 }

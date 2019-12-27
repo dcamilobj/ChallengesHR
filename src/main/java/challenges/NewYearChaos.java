@@ -24,7 +24,7 @@ public class NewYearChaos {
     }
 
     private static int calculateBribes(int[] arr) {
-        return IntStream.range(0, arr.length).map(i -> (int) IntStream.range(Math.max(0,arr[i]-2),i).filter(j -> arr[i] < arr[j]).count()).sum();
+        return IntStream.range(0, arr.length).map(i -> (int) IntStream.range(Math.max(0,arr[i]-2),i).filter(j -> arr[j] > arr[i]).count()).sum();
     }
 }
 
