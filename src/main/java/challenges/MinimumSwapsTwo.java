@@ -3,6 +3,7 @@ package challenges;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -14,6 +15,11 @@ public class MinimumSwapsTwo {
 
         List<Integer> arrayList =Arrays.stream(arr).boxed().collect(Collectors.toList());
         arrayList.stream().filter(i->Collections.frequency(arrayList,i)>1).forEach(System.out::println);
+
+        Set<Integer> numbers = arrayList.stream().filter(i-> Collections.frequency(arrayList, i) > 1 ).collect(Collectors.toSet());
+
+        numbers.stream().forEach(System.out::println);
+
 
 
         if(arr.length < 1 || arr.length > 100000){

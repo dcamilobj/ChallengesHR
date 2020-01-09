@@ -1,5 +1,6 @@
 package challenges;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -9,6 +10,22 @@ public class Main {
 
     public static void main(String[] args){
 
+        String[] magazine = {"give","me","One","grand","today","night"};
+        String[] note = {"give","one","grand","today"};
+        RansomNote.checkMagazine(magazine,note);
+
+    }
+
+    public void testSomeStreamsOperations(){
+        List<String> names = Arrays.asList("carlos","eduardo","james","jose");
+        List<String> lastNames = Arrays.asList("bedoya", "jimenez","gomez","moreno");
+        //names.stream().map(i->i.toUpperCase()).forEach(System.out::println);
+
+
+        Stream.concat(names.stream(),lastNames.stream()).parallel().forEach(System.out::println);
+        IntStream.range(0, names.size()).forEach(i -> System.out.println(names.get(i) + " " + lastNames.get(new Random().nextInt(names.size()-1))));
+
+
         // Find a random number
         Stream<String>  randomStringNumbers = Stream.generate(() -> { return new Random().nextInt(10000);}).limit(2).map(i -> String.format("%04d",i));
         // Generate a string based on a sequence
@@ -16,7 +33,7 @@ public class Main {
         // Generate a Stream based on a function
         Stream.iterate(2, (Integer n) -> ++n)
                 .limit(5)
-                 .forEach(System.out::println);
+                .forEach(System.out::println);
 
         // Generate another Stream based on another function
         Stream.iterate(0, (Integer n) -> n = n+2).limit(100).forEach(System.out::println);
